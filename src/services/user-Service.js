@@ -66,7 +66,7 @@ class UserService{
         }
     }
 
-    async isAuthenticated(token){
+    async isAuthenticated(){
         try {
              const response = await this.verifyToken(token);
              if(!response){
