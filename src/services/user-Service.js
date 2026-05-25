@@ -16,7 +16,7 @@ class UserService{
         } catch (error) {
             if(error.name == 'SequelizeValidationError'){
             throw error;
-            }
+            } 
             console.log("Something went wrong in the sign in process");
             throw error;
         }
@@ -35,6 +35,9 @@ class UserService{
             return newJWT;
 
         } catch (error) {
+            if(error.name == 'Attribute not found.'){
+                throw error;
+            }
             console.log("Something went wrong in the sign in process");
             throw error;
         }
